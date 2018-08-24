@@ -1,8 +1,19 @@
 Package: tweetWrangleR
-Title: What the Package Does (one line, title case)
+Title: Wrangle Tweets Collected from Streaming API
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Sefa", "Ozalp", email = "ozalpas@cardiff.ac.uk", role = c("aut", "cre"))
+Description: This package wrangles tweets collected from Twitter's streaming API. 
+    Twitter data in .jsonl files is parsed and flattened into a 2D tibble.
+    The package is constantly under development and suggestions, pull/feature requests are encouraged. 
+    Features that will be added to the package in the future are:
+        * Clean tweet text
+        * Derive topic models
+        * Prepare RT data for social network analysis
+        * Calculate RT counts
+        * Calculate RT lags
+        * Derive user gender based on names
+        * Calculate sentiment scores
+        * Text classification using externally built classifiers.
 Depends: R (>= 3.4.4)
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -12,3 +23,7 @@ Suggests: covr,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 6.1.0
+Imports: dplyr,
+    stringr,
+    ndjson
