@@ -5,7 +5,7 @@
 \title{Parse .jsonl files into a tibble}
 \usage{
 parse_jsonl(jsonl_path, tweet_colnames = tweet_cols, tweet_lang = "en",
-  filter_term_regex = "muslim|islam")
+  filter_term_regex = "muslim|islam", export_as_csv = FALSE)
 }
 \arguments{
 \item{jsonl_path}{Character. The path to the .jsonl file. It's a good idea to use the output of list.files() as an input.}
@@ -15,6 +15,8 @@ parse_jsonl(jsonl_path, tweet_colnames = tweet_cols, tweet_lang = "en",
 \item{tweet_lang}{Character. Filter tweets only in one language. Default is "en" for English language. Users can provide other languages as well.}
 
 \item{filter_term_regex}{Character. Accepts regex. Default is "muslim|islam". You can the keyword(s) you've used betwen quotation marks while filtering data. If you want to provide multiple keywords, put them between speech marks and separate by '|' (which means 'or').}
+
+\item{export_as_csv}{Logical. If **TRUE**, it will export parsed data as a csv file within the same path as the .jsonl file. If **FALSE** (default), it will return a tibble.}
 }
 \value{
 Always returns a tibble with the columns provided in the tweet_colnames argument. Default alwayns returns a tibble with 99 columns. If there are values that are missing in the source .jsonl file, fills NA.
