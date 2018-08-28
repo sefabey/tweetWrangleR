@@ -28,6 +28,7 @@
 #'
 #'
 parse_jsonl <- function (jsonl_path, tweet_colnames=tweet_cols, tweet_lang=".", filter_term_regex=".", export_as_csv=FALSE) {
+  gc()
   stopifnot(stringr::str_detect(jsonl_path,"\\.jsonl$"))
   json <- ndjson::stream_in(jsonl_path, cls = "tbl") %>%
     filter(stringr::str_detect(string = lang, pattern = regex(tweet_lang,ignore_case = T))) %>%
@@ -43,4 +44,5 @@ parse_jsonl <- function (jsonl_path, tweet_colnames=tweet_cols, tweet_lang=".", 
   } else {
     return(json)
   }
+  gc()
 }
