@@ -1,7 +1,25 @@
 #' tweetWrangleR.
+#'
+#' As the name suggests, tweetWrangleR package wrangles Twitter data. Twitter data collected from Steaming API in .jsonl file format can be parsed and flattened into a 2D tibble using tweetWrangleR. tweetWrangleR also enables web scaping from Twitter. This is expecially useful to collect historical #' data because Twitter's search API only allows to search fro tweets sent in the last 7-9 days.
+#' The package is constantly under development and suggestions, pull and feature requests are encouraged.
+#' Features that will be added to the package in the future are:
+#' * Clean tweet text
+#' * Derive topic models
+#' * Prepare RT data for social network analysis
+#' * Calculate RT counts
+#' * Calculate RT lags
+#' * Derive user gender based on names
+#' * Calculate sentiment scores
+#' * Text classification using externally built classifiers.
+#'
+#'
+#'
 #' @import dplyr
 #' @import ndjson
 #' @import stringr
+#' @import reshape2
+#' @import tidyr
+#' @import tibble
 #' @name tweetWrangleR
 #' @docType package
 NULL

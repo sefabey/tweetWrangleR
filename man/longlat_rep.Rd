@@ -16,5 +16,5 @@ Vector with replaced strings if pattern found.
 Replace coordinate colnames
 }
 \examples{
-longlat_rep(c ("sample.coordinates.coordinates.0", "sample.coordinates.0"  ))
+# longlat_rep(c ("sample.coordinates.coordinates.0", "sample.coordinates.0"  ))
 }

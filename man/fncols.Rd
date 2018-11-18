@@ -18,5 +18,5 @@ Returns a dataframe with the extra columns if they don't exist.
 This function is taken from [here](https://stackoverflow.com/a/45858044).
 }
 \examples{
-fncols(iris, "species")
+#fncols(iris, "species")
 }

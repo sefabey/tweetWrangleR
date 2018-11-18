@@ -22,20 +22,20 @@ parse_jsonl(jsonl_path, tweet_colnames = tweet_cols, tweet_lang = ".",
 Always returns a tibble with the columns provided in the tweet_colnames argument. Default alwayns returns a tibble with 99 columns. If there are values that are missing in the source .jsonl file, fills NA.
 }
 \description{
-Takes a .jsonl file, CONTINUE THE DOCUMENT
+Takes a .jsonl file, converts it to a tibble. Tweet and user metadata are provided in 99 columnswhich are selected for consistency and convenience.
 }
 \examples{
-parse_jsonl("user/desktop/tweets.jsonl")
+# parse_jsonl("user/desktop/tweets.jsonl")
 
-parse_jsonl("user/desktop/tweets.jsonl",
-filter_term_regex = "this|that", tweet_lang = "en"))
+# parse_jsonl("user/desktop/tweets.jsonl", filter_term_regex = "this|that", tweet_lang = "en")
 
-**Parallel Example**
-input_path <- "user/where/your/jsonl/files/are"
-files <- list.files (input_path, full.names=TRUE, recursive=TRUE)
-parallel::mclapply(files, safely(parse_jsonl), export_as_csv=TRUE,mc.cores=3)
-files_csv <- list.files(input_path,full.names = TRUE, recursive = TRUE,pattern = ".csv$")
-whole_data <- map_df(files_csv, .f =read_csv,  col_types= "cccciclc?ddcccciilcccciiiccclciilccilciccclddcccccciiiccciiillccciccclddccciiccciiicccilclccicicccc")
+# **Parallel Example**
+# input_path <- "user/where/your/jsonl/files/are"
+# files <- list.files (input_path, full.names=TRUE, recursive=TRUE)
+# parallel::mclapply(files, safely(parse_jsonl), export_as_csv=TRUE,mc.cores=3)
+# files_csv <- list.files(input_path,full.names = TRUE, recursive = TRUE,pattern = ".csv$")
+# whole_data <- map_df(files_csv, .f =read_csv,
+# col_types= "cccciclc?ddcccciilcccciiiccclciilccilciccclddcccccciiiccciiillccciccclddccciiccciiicccilclccicicccc")
 
 
 

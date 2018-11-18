@@ -1,6 +1,6 @@
 #' Parse .jsonl files into a tibble
 #'
-#' Takes a .jsonl file, CONTINUE THE DOCUMENT
+#' Takes a .jsonl file, converts it to a tibble. Tweet and user metadata are provided in 99 columnswhich are selected for consistency and convenience.
 #'
 #' @param jsonl_path Character. The path to the .jsonl file. It's a good idea to use the output of list.files() as an input.
 #' @param tweet_colnames Character vector. The colnames you want in the output tibble. In the object tweetWrangleR::tweet_cols, 99 opinionated colnames provided as default columns. However, customisation is possible by providing a user defined column names vectors.
@@ -12,18 +12,18 @@
 #'
 #' @export
 #'
-#' @examples parse_jsonl("user/desktop/tweets.jsonl")
+#' @examples # parse_jsonl("user/desktop/tweets.jsonl")
 #'
-#' @examples parse_jsonl("user/desktop/tweets.jsonl",
-#' filter_term_regex = "this|that", tweet_lang = "en"))
+#' @examples # parse_jsonl("user/desktop/tweets.jsonl", filter_term_regex = "this|that", tweet_lang = "en")
 #'
 #' @examples
-#' **Parallel Example**
-#' input_path <- "user/where/your/jsonl/files/are"
-#' files <- list.files (input_path, full.names=TRUE, recursive=TRUE)
-#' parallel::mclapply(files, safely(parse_jsonl), export_as_csv=TRUE,mc.cores=3)
-#' files_csv <- list.files(input_path,full.names = TRUE, recursive = TRUE,pattern = ".csv$")
-#' whole_data <- map_df(files_csv, .f =read_csv,  col_types= "cccciclc?ddcccciilcccciiiccclciilccilciccclddcccccciiiccciiillccciccclddccciiccciiicccilclccicicccc")
+#' # **Parallel Example**
+#' # input_path <- "user/where/your/jsonl/files/are"
+#' # files <- list.files (input_path, full.names=TRUE, recursive=TRUE)
+#' # parallel::mclapply(files, safely(parse_jsonl), export_as_csv=TRUE,mc.cores=3)
+#' # files_csv <- list.files(input_path,full.names = TRUE, recursive = TRUE,pattern = ".csv$")
+#' # whole_data <- map_df(files_csv, .f =read_csv,
+#' # col_types= "cccciclc?ddcccciilcccciiiccclciilccilciccclddcccccciiiccciiillccciccclddccciiccciiicccilclccicicccc")
 #'
 #'
 #'

@@ -2,9 +2,10 @@ Package: tweetWrangleR
 Title: Wrangle Tweets Collected from Streaming API
 Version: 0.0.0.9000
 Authors@R: person("Sefa", "Ozalp", email = "ozalpas@cardiff.ac.uk", role = c("aut", "cre"))
-Description: This package wrangles tweets collected from Twitter's streaming API. 
-    Twitter data in .jsonl files is parsed and flattened into a 2D tibble.
-    The package is constantly under development and suggestions, pull/feature requests are encouraged. 
+Description: This package wrangles Twitter data. 
+    Twitter data collected from Steaming API in .jsonl file format can be parsed and flattened into a 2D tibble. 
+    This package also enables web scaping from Twitter. This is expecially useful to collect historical data because Twitter's search API only allows to search fro tweets sent in the last 7-9 days. 
+    The package is constantly under development and suggestions, pull and feature requests are encouraged. 
     Features that will be added to the package in the future are:
         * Clean tweet text
         * Derive topic models
@@ -26,4 +27,8 @@ VignetteBuilder: knitr
 RoxygenNote: 6.1.0
 Imports: dplyr,
     stringr,
-    ndjson
+    ndjson,
+    tidyr,
+    reshape2,
+    magrittr,
+    tibble
