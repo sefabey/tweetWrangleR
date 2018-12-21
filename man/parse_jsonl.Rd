@@ -5,7 +5,8 @@
 \title{Parse .jsonl files into a tibble}
 \usage{
 parse_jsonl(jsonl_path, tweet_colnames = tweet_cols, tweet_lang = ".",
-  filter_term_regex = ".", export_as_csv = FALSE)
+  filter_term_regex = ".", export_as_csv = FALSE,
+  export_as_rds = FALSE)
 }
 \arguments{
 \item{jsonl_path}{Character. The path to the .jsonl file. It's a good idea to use the output of list.files() as an input.}
@@ -16,7 +17,9 @@ parse_jsonl(jsonl_path, tweet_colnames = tweet_cols, tweet_lang = ".",
 
 \item{filter_term_regex}{Character. Accepts regex. Not case sensitive. Default returns all tweets. You can pass the keyword(s) you've used quotation marks while filtering data. If you want to provide multiple keywords, put them between speech marks and separate by '|' (which means 'or').}
 
-\item{export_as_csv}{Logical. If **TRUE**, it will export parsed data as a csv file within the same path as the .jsonl file. If **FALSE** (default), it will return a tibble.}
+\item{export_as_csv}{Logical. If **TRUE**, it will export parsed data as a .csv file within the same path as the .jsonl file. If **FALSE** (default), it will return a tibble without exporting.}
+
+\item{export_as_rds}{Logical. If **TRUE**, it will export parsed data as a .rds file within the same path as the .jsonl file. If **FALSE** (default), it will return a tibble without exporting.}
 }
 \value{
 Always returns a tibble with the columns provided in the tweet_colnames argument. Default alwayns returns a tibble with 99 columns. If there are values that are missing in the source .jsonl file, fills NA.
